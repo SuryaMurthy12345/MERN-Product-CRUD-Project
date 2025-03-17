@@ -15,7 +15,7 @@ const Dashboard = () => {
 
     const handleDelete = async (id) => {
         try {
-            if (confirm("Are you sure you want to delete this product?")) {
+            if (window.confirm("Are you sure you want to delete this product?")) {
                 await fetch(`http://localhost:5000/api/products/${id}`, {
                     method: 'DELETE'
                 })
@@ -32,9 +32,9 @@ const Dashboard = () => {
         <div>
             <div className='container'>
                 {
-                    prod.length != 0 ?
+                    prod.length !== 0 ?
                         prod.map(value => (
-                            <div className='box'>
+                            <div className='box' key={value._id}>
                                 <img src={value.image} alt={value.name} width={250} height={250} />
                                 <h3>Name:{value.name}</h3>
                                 <p>Price: {value.price}</p>
@@ -48,7 +48,7 @@ const Dashboard = () => {
                         ))
                         : <p>No products Found... 
                             <button onClick={()=>navigate('/addproduct')} className="createlink">
-                            <a href='#'>Create a product</a>
+                            Create a product
                             </button>
                         </p>
                 }
