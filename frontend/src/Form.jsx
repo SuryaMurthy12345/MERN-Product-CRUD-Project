@@ -18,7 +18,7 @@ const Form = () => {
         e.preventDefault();
         try {
             if (window.confirm("Are you sure you want to update this product?")) {
-                const response = await fetch(`http://localhost:5000/api/products/${_id}`, {
+                const response = await fetch(`https://mern-product-crud-project-1.onrender.com/api/products/${_id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': "application/json" },
                     body: JSON.stringify(val),

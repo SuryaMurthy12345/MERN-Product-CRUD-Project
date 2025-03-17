@@ -10,13 +10,13 @@ const Dashboard = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/products").then(res => res.json()).then(res => setProd(res.data)).catch(err => console.error(err))
+        fetch("https://mern-product-crud-project-1.onrender.com/api/products").then(res => res.json()).then(res => setProd(res.data)).catch(err => console.error(err))
     }, [])
 
     const handleDelete = async (id) => {
         try {
             if (window.confirm("Are you sure you want to delete this product?")) {
-                await fetch(`http://localhost:5000/api/products/${id}`, {
+                await fetch(`https://mern-product-crud-project-1.onrender.com/api/products/${id}`, {
                     method: 'DELETE'
                 })
                 setProd(prod.filter(product => product._id != id))

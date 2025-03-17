@@ -22,7 +22,7 @@ const AddProduct = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/products", {
+            const response = await fetch("https://mern-product-crud-project-1.onrender.com/api/products", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
