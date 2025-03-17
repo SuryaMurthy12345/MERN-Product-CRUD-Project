@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import './form.css'
+import './Form.css'
 
 const Form = () => {
 
